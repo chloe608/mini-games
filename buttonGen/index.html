@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            button {
+                width: 30px; height: 30px;
+                background: lightblue;
+                color: white;
+                border:none;
+                padding: 2px;
+            }
+            button:nth-child(2n) {
+                background: lightgreen;
+            }
+            button:hover {
+                background: gray
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Button Generator</h1>
+        <a href="../index.html">Back to main</a>
+
+
+        <script>
+            let num = 1;
+            let id = setInterval(function() {
+                let btn = document.createElement("button");
+                btn.innerText = num; num++;
+                document.body.appendChild(btn);
+            }, 1000/30)
+
+            setTimeout(function() {
+                clearInterval(id);
+            }, 3000);
+        </script>
+    </body>
+</html>
